@@ -1,0 +1,7 @@
+fairface/train
+fairface/val
+__pycache__
+.DS_Store
+weights/*.pt
+weights/*.h5
+weights/*.sh
