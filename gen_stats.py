@@ -80,7 +80,7 @@ def gen_csv(param, conf_thres, models):
           undetected_percentage_val.append(ratio(undetected_val, val))
           i+=1
      result_train.loc[len(result_train)] = undetected_percentage_train
-     result_train.to_csv("results_csv/" + param + "_train.csv", i)
+     result_train.to_csv("results_csv/" + param + "_train.csv")
      result_val.loc[len(result_val)] = undetected_percentage_val
      result_val.to_csv("results_csv/" + param + "_val.csv")
 
@@ -93,7 +93,7 @@ if __name__ == '__main__':
      parser.add_argument('--conf_thres', type=float, default = 0.5, help='confidence thr')
      parser.add_argument('--model_name', type=str, default = 'retinaface', help = 'model name')
      parser.add_argument('--stats_format', type=str, default = 'csv', help = 'model name')
-     parser.add_argument('--param', type = str, default = 'gender', help = 'age, gender or race')
+     parser.add_argument('--param', type = str, default = 'age', help = 'age, gender or race')
      opt = parser.parse_args()
      
      if opt.stats_format == 'markdown':
