@@ -48,7 +48,7 @@ if __name__ == '__main__':
     parser.add_argument('--img-size', type=int, default=640, help='inference size (pixesls)')
     parser.add_argument('--conf_thres', type=float, default=0.5, help='confidence thr')
     parser.add_argument('--data', type =str, default = 'val', help = 'train or val')
-    parser.add_argument('--model_name', type=str, default = 'opencv', help = 'model name')
+    parser.add_argument('--model_name', type=str, default = 'dlib', help = 'model name')
     opt = parser.parse_args()
 
-    detect(opt.img_size, opt.conf_thres, opt.data, opt.model_name)
+    detect(opt.img_size, opt.conf_thres, opt.data, opt.model_name )
