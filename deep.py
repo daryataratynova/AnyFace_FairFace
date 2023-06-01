@@ -16,7 +16,7 @@ def detect(
     dataset = LoadImages(path, img_size) #load images from folder mentioned above
     for path, im, im0s, vid_cap in dataset: #for each image
         try: #try to get a face
-            pred = DeepFace.extract_faces(path, detector_backend=model_name, enforce_detection= True)
+            pred = DeepFace.extract_faces(path, detector_backend=model_name, enforce_detection= True, align= False)
             #if we got a face then we check for confidence
             if pred[0]['confidence']> conf_thres: 
                 found = True #if confidence is above conf_thres then we set status to True
@@ -48,7 +48,7 @@ if __name__ == '__main__':
     parser.add_argument('--img-size', type=int, default=640, help='inference size (pixesls)')
     parser.add_argument('--conf_thres', type=float, default=0.5, help='confidence thr')
     parser.add_argument('--data', type =str, default = 'val', help = 'train or val')
-    parser.add_argument('--model_name', type=str, default = 'dlib', help = 'model name')
+    parser.add_argument('--model_name', type=str, default = 'ssd', help = 'model name')
     opt = parser.parse_args()
 
     detect(opt.img_size, opt.conf_thres, opt.data, opt.model_name )
