@@ -47,7 +47,7 @@ if __name__ == '__main__':
 
     parser.add_argument('--img-size', type=int, default=640, help='inference size (pixesls)')
     parser.add_argument('--conf_thres', type=float, default=0.5, help='confidence thr')
-    parser.add_argument('--data', type =str, default = 'val', help = 'train or val')
+    parser.add_argument('--data', type =str, default = 'train', help = 'train or val')
     parser.add_argument('--model_name', type=str, default = 'ssd', help = 'model name')
     opt = parser.parse_args()
 
